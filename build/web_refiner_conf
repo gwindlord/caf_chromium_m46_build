@@ -34,7 +34,7 @@
       "name"            : "Anti Adblock Filter",
       "category"        : "ADS",
       "format"          : "WebRefiner 1.0",
-      "url"             : "https:////easylist-downloads.adblockplus.org/antiadblockfilters.txt",
+      "url"             : "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt",
       "expiration"      : "5 days"
     },
     {
@@ -49,6 +49,20 @@
       "category"        : "ADS",
       "format"          : "WebRefiner 1.0",
       "url"             : "https://easylist-downloads.adblockplus.org/adwarefilters.txt",
+      "expiration"      : "5 days"
+    },
+    {
+      "name"            : "Regional Ad Filter",
+      "category"        : "ADS",
+      "format"          : "WebRefiner 1.0",
+      "url"             : "https://easylist-downloads.adblockplus.org/bitblock.txt",
+      "expiration"      : "5 days"
+    },
+    {
+      "name"            : "Regional Anti Adblock Filter",
+      "category"        : "ADS",
+      "format"          : "WebRefiner 1.0",
+      "url"             : "https://easylist-downloads.adblockplus.org/advblock.txt",
       "expiration"      : "5 days"
     }
   ]
