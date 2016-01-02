@@ -3,7 +3,7 @@
 1. Clone this repo to dir where to build
 2. Follow items 2-3 of this guide http://forum.xda-developers.com/general/general/guide-building-chromium-snapdragon-t3255475
   (item 1 is recommended, but I use Debian 8 and it works)
-3. Change *ROMName* and *LOCAL_REPO* variables in ** ./build/*.sh ** accordingly
+3. Change *ROMName* and *LOCAL_REPO* variables in __./build/*.sh__ accordingly
 4. Make sure that you're in the dir where to build
 5. To update run **./build/update.sh**
 6. To build run **./build/make.sh**
