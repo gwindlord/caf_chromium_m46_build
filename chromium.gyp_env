@@ -1,0 +1,1 @@
+{ 'GYP_DEFINES': 'OS=android clang=0', }
