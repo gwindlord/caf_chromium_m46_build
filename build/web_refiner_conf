@@ -64,6 +64,41 @@
       "format"          : "WebRefiner 1.0",
       "url"             : "https://easylist-downloads.adblockplus.org/advblock.txt",
       "expiration"      : "5 days"
+    },
+    {
+      "name"            : "uBlock Filters",
+      "category"        : "ADS",
+      "format"          : "WebRefiner 1.0",
+      "url"             : "https://github.com/gorhill/uBlock/raw/master/assets/ublock/filters.txt",
+      "expiration"      : "5 days"
+    },
+    {
+      "name"            : "uBlock Badware",
+      "category"        : "MALWARE_DOMAINS",
+      "format"          : "WebRefiner 1.0",
+      "url"             : "https://github.com/gorhill/uBlock/raw/master/assets/ublock/badware.txt",
+      "expiration"      : "5 days"
+    },
+    {
+      "name"            : "uBlock Block then Redirect",
+      "category"        : "ADS",
+      "format"          : "WebRefiner 1.0",
+      "url"             : "https://github.com/gorhill/uBlock/master/assets/ublock/redirect.txt",
+      "expiration"      : "5 days"
+    },
+    {
+      "name"            : "uBlock Privacy",
+      "category"        : "ADS",
+      "format"          : "WebRefiner 1.0",
+      "url"             : "https://github.com/gorhill/uBlock/master/assets/ublock/privacy.txt",
+      "expiration"      : "5 days"
+    },
+    {
+      "name"            : "uBlock Unbreak",
+      "category"        : "MALWARE_DOMAINS",
+      "format"          : "WebRefiner 1.0",
+      "url"             : "https://github.com/gorhill/uBlock/master/assets/ublock/unbreak.txt",
+      "expiration"      : "5 days"
     }
   ]
 }
