@@ -16,14 +16,9 @@ git apply $LOCAL_REPO/build/build-deps.patch && git add -f $(git status -s | awk
 # some of them are part of other commits, so had to use patching
 git apply $LOCAL_REPO/build/signin.patch && git add -f $(git status -s | awk '{print $2}') && git commit -m "Getting sign-in back"
 
-:<<comment
-
 sed -i 's#org.codeaurora.swe.browser.dev#com.chrome.beta#' $LOCAL_REPO/src/swe/channels/default/branding/BRANDING
 git add -f $(git status -s | awk '{print $2}') && git commit -m "Masking to Chrome Beta for themes support :->"
 
-comment
-
-# I've just thought - CAF icon is nice too...
 #cp -rf $LOCAL_REPO/build/icons/res $LOCAL_REPO/src/swe/channels/default/
 #git add -f $(git status -s | awk '{print $2}') && git commit -m "Shamelessly stealing icons from Slim >_<"
 
