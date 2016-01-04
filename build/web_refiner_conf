@@ -99,6 +99,34 @@
       "format"          : "WebRefiner 1.0",
       "url"             : "https://github.com/gorhill/uBlock/master/assets/ublock/unbreak.txt",
       "expiration"      : "5 days"
+    },
+    {
+      "name"            : "Custom uBlock Filters",
+      "category"        : "ADS",
+      "format"          : "WebRefiner 1.0",
+      "url"             : "https://github.com/gwindlord/caf_chromium_m46_build/raw/master/build/ublock-custom-filters.txt",
+      "expiration"      : "5 days"
+    },
+    {
+      "name"            : "Anti AdBlock Filters 2",
+      "category"        : "ADS",
+      "format"          : "WebRefiner 1.0",
+      "url"             : "https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt",
+      "expiration"      : "5 days"
+    },
+    {
+      "name"            : "Malware Domains long-lived",
+      "category"        : "MALWARE_DOMAINS",
+      "format"          : "WebRefiner 1.0",
+      "url"             : "http://malwaredomains.lehigh.edu/files/immortal_domains.txt",
+      "expiration"      : "5 days"
+    },
+    {
+      "name"            : "Malware Domains from Disconnect",
+      "category"        : "MALWARE_DOMAINS",
+      "format"          : "WebRefiner 1.0",
+      "url"             : "https://s3.amazonaws.com/lists.disconnect.me/simple_malware.txt",
+      "expiration"      : "5 days"
     }
   ]
 }
