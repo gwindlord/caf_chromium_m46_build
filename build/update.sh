@@ -1,7 +1,7 @@
 #!/bin/bash
 
-ROMName="chromium"
-LOCAL_REPO="/mnt/sdc/$ROMName"
+LOCAL_REPO="$(dirname $(dirname $(readlink -f $0)))"
+ROMName=$(basename $LOCAL_REPO)
 
 pushd $LOCAL_REPO/src
   git clean -f -d

@@ -104,7 +104,7 @@
       "name"            : "Custom uBlock Filters",
       "category"        : "ADS",
       "format"          : "WebRefiner 1.0",
-      "url"             : "https://raw.githubusercontent.com/gwindlord/caf_chromium_m46_build/raw/master/build/ublock-custom-filters.txt",
+      "url"             : "https://raw.githubusercontent.com/gwindlord/caf_chromium_m46_build/raw/master/build/filters/ublock-custom-filters.txt",
       "expiration"      : "5 days"
     },
     {
