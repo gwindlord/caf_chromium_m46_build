@@ -194,11 +194,11 @@ index af68178..c45339e 100644
              setOptedOutState(optOutState);
          }
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/preferences/Preferences.java b/chrome/android/java/src/org/chromium/chrome/browser/preferences/Preferences.java
-index d72ffe9..9bec5f1 100644
+index c2fe316..4221e18 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/preferences/Preferences.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/preferences/Preferences.java
-@@ -27,13 +27,11 @@ import android.view.Menu;
- import android.view.MenuItem;
+@@ -28,13 +28,11 @@ import android.view.MenuItem;
+ import android.view.WindowManager;
  
  import org.chromium.base.ApiCompatibilityUtils;
 -import org.chromium.base.CommandLine;
@@ -210,8 +210,8 @@ index d72ffe9..9bec5f1 100644
 -import org.chromium.chrome.browser.ChromeSwitches;
  import org.chromium.chrome.browser.help.HelpAndFeedback;
  import org.chromium.chrome.browser.profiles.Profile;
- 
-@@ -221,13 +219,9 @@ public class Preferences extends AppCompatActivity implements
+ import org.chromium.chrome.browser.preferences.privacy.PrivacyPreferencesManager;
+@@ -237,13 +235,9 @@ public class Preferences extends AppCompatActivity implements
      public boolean onCreateOptionsMenu(Menu menu) {
          super.onCreateOptionsMenu(menu);
          // By default, every screen in Settings shows a "Help & feedback" menu item.
@@ -229,12 +229,12 @@ index d72ffe9..9bec5f1 100644
      }
  
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/preferences/privacy/PrivacyPreferences.java b/chrome/android/java/src/org/chromium/chrome/browser/preferences/privacy/PrivacyPreferences.java
-index be05833..f849831 100644
+index 3fbed83..7d36731 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/preferences/privacy/PrivacyPreferences.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/preferences/privacy/PrivacyPreferences.java
-@@ -15,9 +15,7 @@ import android.view.MenuInflater;
- import android.view.MenuItem;
+@@ -16,9 +16,7 @@ import android.view.MenuItem;
  import android.content.Intent;
+ import android.view.WindowManager;
  
 -import org.chromium.base.CommandLine;
  import org.chromium.chrome.R;
@@ -242,7 +242,7 @@ index be05833..f849831 100644
  import org.chromium.chrome.browser.contextualsearch.ContextualSearchFieldTrial;
  import org.chromium.chrome.browser.help.HelpAndFeedback;
  import org.chromium.chrome.browser.precache.PrecacheLauncher;
-@@ -106,13 +104,7 @@ public class PrivacyPreferences extends BrowserPreferenceFragment
+@@ -107,13 +105,7 @@ public class PrivacyPreferences extends BrowserPreferenceFragment
          ChromeBaseCheckBoxPreference uploadCrashDumpNoCellularPref =
                  (ChromeBaseCheckBoxPreference) findPreference(PREF_CRASH_DUMP_UPLOAD_NO_CELLULAR);
  
@@ -257,7 +257,7 @@ index be05833..f849831 100644
              preferenceScreen.removePreference(uploadCrashDumpNoCellularPref);
              preferenceScreen.removePreference(uploadCrashDumpPref);
          } else {
-@@ -334,12 +326,9 @@ public class PrivacyPreferences extends BrowserPreferenceFragment
+@@ -347,12 +339,9 @@ public class PrivacyPreferences extends BrowserPreferenceFragment
      @Override
      public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
          menu.clear();
