@@ -23,7 +23,8 @@ git add -f $(git status -s | awk '{print $2}') && git commit -m "Masking to Chro
 #git add -f $(git status -s | awk '{print $2}') && git commit -m "Shamelessly stealing icons from Slim >_<"
 
 cp -f $LOCAL_REPO/build/webrefiner_conf/web_refiner_conf $LOCAL_REPO/src/chrome/android/java/res_chromium/raw/
-git add -f $(git status -s | awk '{print $2}') && git commit -m "Shamelessly stealing WebRefiner config from JSwarts and extending it"
+cp -f $LOCAL_REPO/build/webdefender_conf/web_defender_conf $LOCAL_REPO/src/chrome/android/java/res_chromium/raw/
+git add -f $(git status -s | awk '{print $2}') && git commit -m "Shamelessly stealing WebRefiner and WebDefender configs from JSwarts and extending them"
 
 gclient runhooks -v
 

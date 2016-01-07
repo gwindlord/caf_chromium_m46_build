@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "update": {},
+  "subscriptions": [
+    {
+      "name"            : "Cookie Block List",
+      "category"        : "COOKIE_BLOCK_YELLOW_LIST",
+      "format"          : "WebDefender 1.0",
+      "url"             : "https://raw.githubusercontent.com/liamja/Prebake/master/obtrusive.txt",
+      "expiration"      : "7 days"
+    }
+  ]
+}
