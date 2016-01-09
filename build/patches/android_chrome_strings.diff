@@ -156,8 +156,8 @@
 +<string name="powersave_mode_turn_on_title">"Включить режим энергосбережения"</string>
 +<string name="powersave_mode_opt_out_confirmation">"Режим энергосбережения будет отключен."</string>
 +<string name="powersave_mode_opt_in_confirmation">"Режим энергосбережения будет включен."</string>
-+<string name="background_audio_title">"Фоновое воспроизведение"</string>
-+<string name="background_audio_reload_tip_text">"Включает возможность продолжать воспроизведение видео, когда страница с ним неактивна."</string>
++<string name="background_audio_title">"Фоновое аудио"</string>
++<string name="background_audio_reload_tip_text">"Разрешить видео продолжать воспроизведение аудио, когда страница с видео неактивна."</string>
  <string name="close_all_incognito_notification">"Закрыть все вкладки инкогнито"</string>
  <string name="tabs_and_apps_title">"Вкладки в списке приложений"</string>
  <string name="tabs_and_apps_opt_out_title">"Где искать вкладки"</string>

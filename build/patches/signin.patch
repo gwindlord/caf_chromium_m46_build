@@ -1,3 +1,20 @@
+diff --git a/chrome/android/java/res/xml/main_preferences.xml b/chrome/android/java/res/xml/main_preferences.xml
+index 42f9b6d..d91a178 100644
+--- a/chrome/android/java/res/xml/main_preferences.xml
++++ b/chrome/android/java/res/xml/main_preferences.xml
+@@ -5,12 +5,9 @@
+ 
+ <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+ 
+-<!--
+     <org.chromium.chrome.browser.preferences.SignInPreference
+         android:key="sign_in"
+         android:title="@string/sign_in_to_chrome" />
+--->
+-
+     <PreferenceCategory
+         android:layout="@layout/browser_preference_category_first"
+         android:title="@string/prefs_section_basics"/>
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/ChromeActivity.java b/chrome/android/java/src/org/chromium/chrome/browser/ChromeActivity.java
 index a1a93f4..3aa517a 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/ChromeActivity.java
