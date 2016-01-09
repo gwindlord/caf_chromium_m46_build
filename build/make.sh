@@ -16,8 +16,8 @@ git apply $LOCAL_REPO/build/patches/build-deps.patch && git add -f $(git status 
 # some of them are part of other commits, so had to use patching
 git apply $LOCAL_REPO/build/patches/signin.patch && git add -f $(git status -s | awk '{print $2}') && git commit -m "Getting sign-in back"
 
-sed -i 's#org.codeaurora.swe.browser.dev#com.chrome.beta#' $LOCAL_REPO/src/swe/channels/default/branding/BRANDING
-git add -f $(git status -s | awk '{print $2}') && git commit -m "Masking to Chrome Beta for themes support :->"
+# I do not know other way to get it themed, sorry
+git apply $LOCAL_REPO/build/patches/themes.patch && git add -f $(git status -s | awk '{print $2}') && git commit -m "Masking to Chrome for themes support :->"
 
 #cp -rf $LOCAL_REPO/build/icons/res $LOCAL_REPO/src/swe/channels/default/
 #git add -f $(git status -s | awk '{print $2}') && git commit -m "Shamelessly stealing icons from Slim >_<"
@@ -27,5 +27,8 @@ cp -f $LOCAL_REPO/build/webdefender_conf/web_defender_conf $LOCAL_REPO/src/chrom
 git add -f $(git status -s | awk '{print $2}') && git commit -m "Shamelessly stealing WebRefiner and WebDefender configs from JSwarts and extending them"
 
 gclient runhooks -v
+
+# implementing custom translated lines build
+patch -p0 < $LOCAL_REPO/build/patches/chrome_strings_grd_ninja.diff
 
 $LOCAL_REPO/build/run.sh &
