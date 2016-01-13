@@ -26,6 +26,10 @@ cp -f $LOCAL_REPO/build/webrefiner_conf/web_refiner_conf $LOCAL_REPO/src/chrome/
 cp -f $LOCAL_REPO/build/webdefender_conf/web_defender_conf $LOCAL_REPO/src/chrome/android/java/res_chromium/raw/
 git add -f $(git status -s | awk '{print $2}') && git commit -m "Shamelessly stealing WebRefiner and WebDefender configs from JSwarts and extending them"
 
+# reverting to old bookmarks UI
+git revert 3c663874836f146f5702090b1874938a9cc431ea
+git revert 2f8a15af8865836a98c578138dc7f59e1b043cf7
+
 gclient runhooks -v
 
 # implementing custom translated lines build
