@@ -69,14 +69,14 @@
       "name"            : "uBlock Filters",
       "category"        : "ADS",
       "format"          : "WebRefiner 1.0",
-      "url"             : "https://raw.githubusercontent.com/gorhill/uBlock/raw/master/assets/ublock/filters.txt",
+      "url"             : "https://raw.githubusercontent.com/gorhill/uBlock/master/assets/ublock/filters.txt",
       "expiration"      : "5 days"
     },
     {
       "name"            : "uBlock Badware",
       "category"        : "MALWARE_DOMAINS",
       "format"          : "WebRefiner 1.0",
-      "url"             : "https://raw.githubusercontent.com/gorhill/uBlock/raw/master/assets/ublock/badware.txt",
+      "url"             : "https://raw.githubusercontent.com/gorhill/uBlock/master/assets/ublock/badware.txt",
       "expiration"      : "5 days"
     },
     {
@@ -104,7 +104,7 @@
       "name"            : "Custom uBlock Filters",
       "category"        : "ADS",
       "format"          : "WebRefiner 1.0",
-      "url"             : "https://raw.githubusercontent.com/gwindlord/caf_chromium_m46_build/raw/master/build/filters/ublock-custom-filters.txt",
+      "url"             : "https://raw.githubusercontent.com/gwindlord/caf_chromium_m46_build/master/build/filters/ublock-custom-filters.txt",
       "expiration"      : "5 days"
     },
     {
