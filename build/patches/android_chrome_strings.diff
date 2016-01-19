@@ -15,7 +15,7 @@
  <string name="options_homepage_edit_label">"Открыть эту страницу"</string>
 -<string name="touch_to_select">"Touch to select"</string>
 +<string name="touch_to_select">"Нажмите для выбора"</string>
- <string name="default_homepage_url">"https://www.google.com/"</string>
+ <string name="default_homepage_url">""</string>
 -<string name="default_homepage">"Default Page"</string>
 -<string name="most_visited_sites_homepage">"Most Visited Sites"</string>
 -<string name="other_homepage">"Other"</string>

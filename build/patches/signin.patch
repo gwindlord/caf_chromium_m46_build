@@ -1,5 +1,5 @@
 diff --git a/chrome/android/java/res/xml/main_preferences.xml b/chrome/android/java/res/xml/main_preferences.xml
-index 42f9b6d..d91a178 100644
+index 09f6c13..6734aef 100644
 --- a/chrome/android/java/res/xml/main_preferences.xml
 +++ b/chrome/android/java/res/xml/main_preferences.xml
 @@ -5,12 +5,9 @@
@@ -171,32 +171,6 @@ index 737048a..d33d469 100644
          }
  
          // Add separator line after the recently closed tabs group.
-diff --git a/chrome/android/java/src/org/chromium/chrome/browser/partnercustomizations/PartnerBrowserCustomizations.java b/chrome/android/java/src/org/chromium/chrome/browser/partnercustomizations/PartnerBrowserCustomizations.java
-index 9692902..01ccb13 100644
---- a/chrome/android/java/src/org/chromium/chrome/browser/partnercustomizations/PartnerBrowserCustomizations.java
-+++ b/chrome/android/java/src/org/chromium/chrome/browser/partnercustomizations/PartnerBrowserCustomizations.java
-@@ -14,10 +14,8 @@ import android.os.AsyncTask;
- import android.text.TextUtils;
- import android.util.Log;
- 
--import org.chromium.base.CommandLine;
- import org.chromium.base.ThreadUtils;
- import org.chromium.base.VisibleForTesting;
--import org.chromium.chrome.browser.ChromeSwitches;
- import org.chromium.chrome.browser.partnerbookmarks.PartnerBookmarksReader;
- 
- import java.util.ArrayList;
-@@ -175,10 +173,6 @@ public class PartnerBrowserCustomizations {
-             @Override
-             protected Void doInBackground(Void... params) {
-                 try {
--                    if (!CommandLine.getInstance()
--                            .hasSwitch(ChromeSwitches.ENABLE_SUPPRESSED_CHROMIUM_FEATURES)) {
--                        return null;
--                    }
-                     ProviderInfo providerInfo = context.getPackageManager()
-                             .resolveContentProvider(sProviderAuthority, 0);
-                     if (providerInfo == null) return null;
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/preferences/DocumentModeManager.java b/chrome/android/java/src/org/chromium/chrome/browser/preferences/DocumentModeManager.java
 index af68178..c45339e 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/preferences/DocumentModeManager.java
