@@ -18,15 +18,8 @@ git apply $LOCAL_REPO/build/patches/build-deps.patch && git add -f $(git status 
 # some of them are part of other commits, so had to use patching
 git apply $LOCAL_REPO/build/patches/signin.patch && git add -f $(git status -s | awk '{print $2}') && git commit -m "Getting sign-in back"
 
-if [[ "$isSystem" != "--system" ]];
-then
-  git apply $LOCAL_REPO/build/patches/themes.patch
-else
-  # stay Browser when building as system package
-  git apply $LOCAL_REPO/build/patches/themes_system.patch
-fi
 # I do not know other way to get it themed, sorry
-git add -f $(git status -s | awk '{print $2}') && git commit -m "Masking to Chrome Beta for themes support :->"
+git apply $LOCAL_REPO/build/patches/themes.patch && git add -f $(git status -s | awk '{print $2}') && git commit -m "Masking to Chrome Beta for themes support :->"
 
 #cp -rf $LOCAL_REPO/build/icons/res $LOCAL_REPO/src/swe/channels/default/
 #git add -f $(git status -s | awk '{print $2}') && git commit -m "Shamelessly stealing icons from Slim >_<"
