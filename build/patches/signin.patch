@@ -28,7 +28,7 @@ index a1a93f4..3aa517a 100644
      }
  
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/ChromeApplication.java b/chrome/android/java/src/org/chromium/chrome/browser/ChromeApplication.java
-index 1542fd8..078d553 100644
+index cc7e8c7..7bf7a97 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/ChromeApplication.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/ChromeApplication.java
 @@ -25,7 +25,6 @@ import org.chromium.base.ApplicationState;
@@ -57,18 +57,9 @@ index 1542fd8..078d553 100644
 -                        appendSwitchWithValue(ChromeSwitches.ENABLE_ENHANCED_BOOKMARKS, "0");
 -            }
 -        }
+         // SWE specific command line switches
+         SWECommandLine.getInstance(this).initSWECommandLine();
      }
- 
-     /**
-@@ -547,7 +532,7 @@ public class ChromeApplication extends ContentApplication {
-                         WebRefinerPreferenceHandler.applyInitialPreferences();
-                         WebDefenderPreferenceHandler.applyInitialPreferences();
-                     }
--                });
-+        });
-     }
- 
-     /**
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/ChromeSwitches.java b/chrome/android/java/src/org/chromium/chrome/browser/ChromeSwitches.java
 index 860502f..a3b3d8b 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/ChromeSwitches.java

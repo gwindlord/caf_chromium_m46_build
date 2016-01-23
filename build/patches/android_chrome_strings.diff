@@ -46,9 +46,10 @@
  <string name="website_settings_category_blocked">"Заблокировано"</string>
 -<string name="website_settings_category_enabled">"Enabled"</string>
 -<string name="website_settings_security_title">"Security Information"</string>
+-<string name="website_settings_smartprotect_title">"Smart Protect"</string>
 +<string name="website_settings_category_enabled">"Включено"</string>
 +<string name="website_settings_security_title">"Информация о безопасности"</string>
- <string name="website_settings_smartprotect_title">"Smart Protect"</string>
++<string name="website_settings_smartprotect_title">"Web Defender"</string>
  <string name="website_settings_webrefiner_title">"Web Refiner"</string>
 -<string name="website_settings_webrefiner_enabled">"Content blocking is enabled"</string>
 -<string name="website_settings_webrefiner_disabled">"Content blocking is disabled"</string>
@@ -80,7 +81,7 @@
 -<string name="website_settings_webdefender_vector_system_default">"Decide for me"</string>
 -<string name="website_settings_webdefender_tracking_list">"Connected domain settings:"</string>
 -<string name="website_settings_webdefender_tracking_not_detected">"not detected"</string>
--<string name="website_settings_category_webrefiner_enabled_recommended">"Enable to block Ads, Trackers and Malware (Recommended)"</string>
+-<string name="website_settings_category_webrefiner_enabled_recommended">"Block ads and known malware and trackers"</string>
 -<string name="website_settings_category_webdefender_enabled">"When enabled, the browser uses machine learning to monitor the websites you visit and prevents them from collecting your private information."</string>
 -<string name="website_settings_category_disabled">"Disabled"</string>
 +<string name="website_settings_webdefender_vector_strip">"Вырезать вектора и подключить"</string>
@@ -88,7 +89,7 @@
 +<string name="website_settings_webdefender_vector_system_default">"Автоматически"</string>
 +<string name="website_settings_webdefender_tracking_list">"Настройки подключенного домена:"</string>
 +<string name="website_settings_webdefender_tracking_not_detected">"не определены"</string>
-+<string name="website_settings_category_webrefiner_enabled_recommended">"Включите для блокировки рекламы, отслеживания и malware (рекомендуется)"</string>
++<string name="website_settings_category_webrefiner_enabled_recommended">"Блокировать известную рекламу, отслеживание и malware"</string>
 +<string name="website_settings_category_webdefender_enabled">"Когда включено, браузер использует автообучение для отслеживания посещаемых сайтов и предотвращения сбора ими вашей личной информации."</string>
 +<string name="website_settings_category_disabled">"Отключено"</string>
  <string name="website_settings_category_allowed_except_third_party">"Разрешено, кроме сторонних сайтов"</string>
@@ -104,7 +105,7 @@
 +<string name="ssl_warning">"К SSL-сертификату сайта есть нарекания"</string>
 +<string name="ssl_error">"Неверный SSL-сертификат сайта"</string>
 +<string name="ssl_secure">"SSL-сертификат сайта верный. Обмен данными зашифрован и авторство сайта подтверждено"</string>
- <string name="webdefender">"Smart Protect"</string>
+ <string name="webdefender">"Web Defender"</string>
 -<string name="webrefiner_ads">"advertisement"</string>
 -<string name="webrefiner_ads_plural">"advertisements"</string>
 -<string name="webrefiner_trackers">"tracker"</string>
@@ -123,7 +124,22 @@
  <string name="protected_content">"Защищенное содержание"</string>
  <string name="protected_content_reset_failed">"Ошибка сброса. Подключитесь к Интернету и повторите попытку."</string>
  <string name="reset_device_credentials">"Сбросить учетные данные"</string>
-@@ -387,8 +387,8 @@
+@@ -224,10 +224,10 @@
+ <string name="protected_content_reset_message">"Воспроизведение контента (фильмов, музыки и т. д.), скачанного в других приложениях, может не поддерживаться, пока не будут получены лицензии с новыми учетными данными устройства.
+ 
+ Чтобы получить новые лицензии, подключитесь к Интернету и воспроизведите скачанный контент."</string>
+-<string name="tooltip_favicon_change_search_engine">"You can click on this icon to change the browser search engine"</string>
+-<string name="tooltip_favicon_change_site_settings">"You can click on this icon to change settings for the current website"</string>
+-<string name="tooltip_favicon_content_blocking_info">"Certain unwanted content on the current website is blocked. You can click on this icon to view more details"</string>
+-<string name="tooltip_favicon_site_integrity_check">"Certain unwanted content on the current website is blocked. Is the website properly displayed? You can configure the content blocking by clicking on this icon"</string>
++<string name="tooltip_favicon_change_search_engine">"Нажмите на значок, чтобы изменить поисковую систему"</string>
++<string name="tooltip_favicon_change_site_settings">"Нажмите на значок, чтобы изменить настройки для текущего сайта"</string>
++<string name="tooltip_favicon_content_blocking_info">"Нежелательный контент на этой странице заблокирован. Нажмите на значок для информации"</string>
++<string name="tooltip_favicon_site_integrity_check">"Нежелательный контент на этой странице заблокирован. Правильно ли отображается сайт? Вы можете настроить блокировку одержимого, нажав на этот значок"</string>
+ <string name="language">"Язык"</string>
+ <string name="google_translate">"Google Переводчик"</string>
+ <string name="translate_prefs_description">"Предлагать переводить страницы с помощью Google Переводчика"</string>
+@@ -391,8 +391,8 @@
  <string name="infobar_missing_location_permission_text">"Предоставьте браузеру Chrome доступ к геоданным, чтобы продолжить работу на этом сайте."</string>
  <string name="infobar_missing_multiple_permissions_text">"Предоставьте браузеру Chrome разрешения, чтобы продолжить работу на этом сайте."</string>
  <string name="omnibox_geolocation_disclosure">"%1$s использует ваше местоположение, чтобы показывать результаты поиска по адресам."</string>
@@ -134,7 +150,7 @@
  <string name="contextmenu_open_in_new_tab">"Открыть в новой вкладке"</string>
  <string name="contextmenu_open_in_incognito_tab">"Открыть в режиме инкогнито"</string>
  <string name="contextmenu_copy_email_address">"Скопировать адрес эл. почты"</string>
-@@ -468,16 +468,16 @@
+@@ -472,16 +472,16 @@
  <string name="oma_download_size_label">"Размер:"</string>
  <string name="oma_download_type_label">"Тип:"</string>
  <string name="oma_download_description_label">"Описание:"</string>
@@ -161,16 +177,33 @@
  <string name="close_all_incognito_notification">"Закрыть все вкладки инкогнито"</string>
  <string name="tabs_and_apps_title">"Вкладки в списке приложений"</string>
  <string name="tabs_and_apps_opt_out_title">"Где искать вкладки"</string>
-@@ -532,7 +532,7 @@
+@@ -536,10 +536,10 @@
  <string name="accessibility_stop">"Остановить"</string>
  <string name="ntp_bookmarks">"Закладки"</string>
  <string name="recent_tabs">"Недавние вкладки"</string>
 -<string name="most_visited">"Most Frequent"</string>
+-<string name="offline_readings">"Offline Readings"</string>
+-<string name="offline_readings_snackbar_saved">"Page Saved for Offline Reading"</string>
+-<string name="offline_readings_empty">"No pages saved for offline reading"</string>
 +<string name="most_visited">"Часто посещаемые"</string>
++<string name="offline_readings">"Сохранённые страницы"</string>
++<string name="offline_readings_snackbar_saved">"Страницы, сохранённые для просмотра офлайн"</string>
++<string name="offline_readings_empty">"Нет страниц для просмотра офлайн"</string>
  <string name="most_visited_placeholder_title">"Здесь появятся часто посещаемые страницы"</string>
  <string name="most_visited_placeholder_summary">"Здесь появятся страницы, которые вы чаще всего просматриваете."</string>
  <string name="accessibility_google_doodle">"Дудл Google: %1$s"</string>
-@@ -726,12 +726,12 @@
+@@ -566,8 +566,8 @@
+ <string name="menu_new_tab">"Новая вкладка"</string>
+ <string name="menu_new_incognito_tab">"Новая вкладка инкогнито"</string>
+ <string name="menu_bookmarks">"Закладки"</string>
+-<string name="menu_save_offline_page">"Save for offline reading"</string>
+-<string name="menu_load_live_page_for_offline_page">"Go live"</string>
++<string name="menu_save_offline_page">"Сохранить для просмотра офлайн"</string>
++<string name="menu_load_live_page_for_offline_page">"Открыть в сети"</string>
+ <string name="menu_bookmarks_offline_pages">"Сохраненные страницы"</string>
+ <string name="menu_recent_tabs">"Недавние вкладки"</string>
+ <string name="menu_history">"История"</string>
+@@ -735,13 +735,13 @@
  <string name="help_context_incognito_learn_more">"chrome_incognito"</string>
  <string name="help_context_usage_reports">"send_crash_report"</string>
  <string name="help_context_sad_tab">"mobile_awsnap"</string>
@@ -190,4 +223,5 @@
 +        &lt;br&gt;&lt;/br&gt;Заголовок вкладки: %3$s
 +        &lt;br&gt;&lt;/br&gt;URL вкладки: %4$s
 +        &lt;br&gt;&lt;/br&gt;Введите здесь ваш отзыв..."</string>
+ <string name="swe_def_ua_override">""</string>
  </resources>
