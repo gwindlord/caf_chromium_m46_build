@@ -3,7 +3,9 @@
 LOCAL_REPO="$(dirname $(dirname $(readlink -f $0)))"
 ROMName=$(basename $LOCAL_REPO)
 
-isSystem="$1"
+# parameter "--system" allows not to start the build immdeiately
+# parameter "--no-gclient" allows not to run "gclient runhooks -v" - to check the pervious commits logs
+isCustom="$1"
 
 cd $LOCAL_REPO/src
 
@@ -31,17 +33,24 @@ cp -f $LOCAL_REPO/build/webrefiner_conf/web_refiner_conf $LOCAL_REPO/src/chrome/
 cp -f $LOCAL_REPO/build/webdefender_conf/web_defender_conf $LOCAL_REPO/src/chrome/android/java/res_chromium/raw/
 git add -f $(git status -s | awk '{print $2}') && git commit -m "Shamelessly stealing WebRefiner and WebDefender configs from JSwarts and extending them"
 
-# reverting to old bookmarks UI
-git revert 3c663874836f146f5702090b1874938a9cc431ea
-git revert 2f8a15af8865836a98c578138dc7f59e1b043cf7
+# reverting to old bookmarks UI - have to change strategy due to 9fd8eb1f1374a51f048ec255f8e341ff2e381234
+git apply $LOCAL_REPO/build/patches/bookmarks.patch && git add -f $(git status -s | awk '{print $2}') && git commit -m "Reverting to old bookmarks UI"
+git revert 2f8a15af8865836a98c578138dc7f59e1b043cf7 || git add -f $(git status -s | awk '{print $2}') && git revert --continue
 
-gclient runhooks -v
+if [[ "$isCustom" != "--no-gclient" ]];
+then
 
-# implementing custom translated lines build
-patch -p0 < $LOCAL_REPO/build/patches/chrome_strings_grd_ninja.diff
+  gclient runhooks -v
+
+  # implementing custom translated lines build
+  patch -p0 < $LOCAL_REPO/build/patches/chrome_strings_grd_ninja.diff
+
+else
+  exit 0
+fi
 
 # for ROM build env - to allow it starting system package build itself
-if [[ "$isSystem" != "--system" ]];
+if [[ "$isCustom" != "--system" ]];
 then
 
   $LOCAL_REPO/build/run.sh &

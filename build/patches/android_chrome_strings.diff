@@ -177,9 +177,9 @@
  <string name="close_all_incognito_notification">"Закрыть все вкладки инкогнито"</string>
  <string name="tabs_and_apps_title">"Вкладки в списке приложений"</string>
  <string name="tabs_and_apps_opt_out_title">"Где искать вкладки"</string>
-@@ -536,10 +536,10 @@
- <string name="accessibility_stop">"Остановить"</string>
+@@ -537,10 +537,10 @@
  <string name="ntp_bookmarks">"Закладки"</string>
+ <string name="ntp_custom_home">"Главная страница"</string>
  <string name="recent_tabs">"Недавние вкладки"</string>
 -<string name="most_visited">"Most Frequent"</string>
 -<string name="offline_readings">"Offline Readings"</string>
@@ -192,7 +192,7 @@
  <string name="most_visited_placeholder_title">"Здесь появятся часто посещаемые страницы"</string>
  <string name="most_visited_placeholder_summary">"Здесь появятся страницы, которые вы чаще всего просматриваете."</string>
  <string name="accessibility_google_doodle">"Дудл Google: %1$s"</string>
-@@ -566,8 +566,8 @@
+@@ -567,8 +567,8 @@
  <string name="menu_new_tab">"Новая вкладка"</string>
  <string name="menu_new_incognito_tab">"Новая вкладка инкогнито"</string>
  <string name="menu_bookmarks">"Закладки"</string>
@@ -203,7 +203,24 @@
  <string name="menu_bookmarks_offline_pages">"Сохраненные страницы"</string>
  <string name="menu_recent_tabs">"Недавние вкладки"</string>
  <string name="menu_history">"История"</string>
-@@ -735,13 +735,13 @@
+@@ -720,11 +720,11 @@
+ <string name="blocked_navigation_warning">"Навигация заблокирована: %1$s"</string>
+ <string name="unreachable_navigation_warning">"Страница не найдена: %1$s"</string>
+ <string name="close_tab">"Закрыть вкладку"</string>
+-<string name="swe_exit">"Exit"</string>
+-<string name="swe_exit_dialog_title">"Exit browser"</string>
+-<string name="swe_exit_dialog_msg">"Do you want to exit the browser?"</string>
+-<string name="swe_minimize">"Minimize"</string>
+-<string name="swe_quit">"Quit"</string>
++<string name="swe_exit">"Выход"</string>
++<string name="swe_exit_dialog_title">"Закрыть браузер"</string>
++<string name="swe_exit_dialog_msg">"Вы действительно хотите выйти?"</string>
++<string name="swe_minimize">"Свернуть"</string>
++<string name="swe_quit">"Выйти"</string>
+ <string name="help_context_new_tab">"mobile_new_tab"</string>
+ <string name="help_context_search_results">"mobile_search_results"</string>
+ <string name="help_context_webpage">"mobile_webpage"</string>
+@@ -741,14 +741,14 @@
  <string name="help_context_incognito_learn_more">"chrome_incognito"</string>
  <string name="help_context_usage_reports">"send_crash_report"</string>
  <string name="help_context_sad_tab">"mobile_awsnap"</string>
@@ -224,4 +241,5 @@
 +        &lt;br&gt;&lt;/br&gt;URL вкладки: %4$s
 +        &lt;br&gt;&lt;/br&gt;Введите здесь ваш отзыв..."</string>
  <string name="swe_def_ua_override">""</string>
+ <string name="swe_def_extra_http_headers">""</string>
  </resources>
