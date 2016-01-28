@@ -16,10 +16,10 @@ index 09f6c13..6734aef 100644
          android:layout="@layout/browser_preference_category_first"
          android:title="@string/prefs_section_basics"/>
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/ChromeActivity.java b/chrome/android/java/src/org/chromium/chrome/browser/ChromeActivity.java
-index a1a93f4..3aa517a 100644
+index c382713..ea88fb8 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/ChromeActivity.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/ChromeActivity.java
-@@ -711,7 +711,6 @@ public abstract class ChromeActivity extends BrowserChromeActivity
+@@ -714,7 +714,6 @@ public abstract class ChromeActivity extends BrowserChromeActivity
  
          // We want to refresh partner browser provider every onStart().
          mPartnerBrowserRefreshNeeded = true;
@@ -61,7 +61,7 @@ index cc7e8c7..7bf7a97 100644
          SWECommandLine.getInstance(this).initSWECommandLine();
      }
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/ChromeSwitches.java b/chrome/android/java/src/org/chromium/chrome/browser/ChromeSwitches.java
-index 860502f..a3b3d8b 100644
+index e7d8c20..6168c10 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/ChromeSwitches.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/ChromeSwitches.java
 @@ -15,11 +15,6 @@ public abstract class ChromeSwitches {
@@ -73,9 +73,9 @@ index 860502f..a3b3d8b 100644
 -    public static final String ENABLE_SUPPRESSED_CHROMIUM_FEATURES =
 -            "enable-suppressed-chromium-features";
 -
-     /** Mimic a low end device */
-     public static final String ENABLE_ACCESSIBILITY_TAB_SWITCHER =
-             "enable-accessibility-tab-switcher";
+     /** Sets WebDefender's default value to False */
+     public static final String DEFAULT_DISABLE_WEB_DEFENDER = "disable-web-defender-by-default";
+ 
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/compositor/layouts/LayoutManagerDocument.java b/chrome/android/java/src/org/chromium/chrome/browser/compositor/layouts/LayoutManagerDocument.java
 index 2079b9c..a5faf4c 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/compositor/layouts/LayoutManagerDocument.java

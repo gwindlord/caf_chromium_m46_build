@@ -23,9 +23,6 @@ git apply $LOCAL_REPO/build/patches/signin.patch && git add -f $(git status -s |
 # I do not know other way to get it themed, sorry
 git apply $LOCAL_REPO/build/patches/themes.patch && git add -f $(git status -s | awk '{print $2}') && git commit -m "Masking to Chrome Beta for themes support :->"
 
-#cp -rf $LOCAL_REPO/build/icons/res $LOCAL_REPO/src/swe/channels/default/
-#git add -f $(git status -s | awk '{print $2}') && git commit -m "Shamelessly stealing icons from Slim >_<"
-
 # removing Google Translate tick as it does not work anyway
 git apply $LOCAL_REPO/build/patches/remove_translate.patch && git add -f $(git status -s | awk '{print $2}') && git commit -m "Remove page translation tick"
 

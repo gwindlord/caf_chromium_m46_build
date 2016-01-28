@@ -128,14 +128,14 @@
  <string name="protected_content_reset_message">"Воспроизведение контента (фильмов, музыки и т. д.), скачанного в других приложениях, может не поддерживаться, пока не будут получены лицензии с новыми учетными данными устройства.
  
  Чтобы получить новые лицензии, подключитесь к Интернету и воспроизведите скачанный контент."</string>
--<string name="tooltip_favicon_change_search_engine">"You can click on this icon to change the browser search engine"</string>
--<string name="tooltip_favicon_change_site_settings">"You can click on this icon to change settings for the current website"</string>
--<string name="tooltip_favicon_content_blocking_info">"Certain unwanted content on the current website is blocked. You can click on this icon to view more details"</string>
--<string name="tooltip_favicon_site_integrity_check">"Certain unwanted content on the current website is blocked. Is the website properly displayed? You can configure the content blocking by clicking on this icon"</string>
+-<string name="tooltip_favicon_change_search_engine">"Touch here to change the search engine."</string>
+-<string name="tooltip_favicon_change_site_settings">"Touch here to change preferences for the current website, including content filtering."</string>
+-<string name="tooltip_favicon_content_blocking_info">"Content filtering is active. Touch here for more information."</string>
+-<string name="tooltip_favicon_site_integrity_check">"Content filtering is active. If there are issues on this website, touch this icon and try disabling content filtering."</string>
 +<string name="tooltip_favicon_change_search_engine">"Нажмите на значок, чтобы изменить поисковую систему"</string>
-+<string name="tooltip_favicon_change_site_settings">"Нажмите на значок, чтобы изменить настройки для текущего сайта"</string>
-+<string name="tooltip_favicon_content_blocking_info">"Нежелательный контент на этой странице заблокирован. Нажмите на значок для информации"</string>
-+<string name="tooltip_favicon_site_integrity_check">"Нежелательный контент на этой странице заблокирован. Правильно ли отображается сайт? Вы можете настроить блокировку одержимого, нажав на этот значок"</string>
++<string name="tooltip_favicon_change_site_settings">"Нажмите на значок, чтобы изменить настройки для текущего сайта, включая фильтрацию содержимого"</string>
++<string name="tooltip_favicon_content_blocking_info">"Фильтрация содержимого включена. Нажмите на значок для информации"</string>
++<string name="tooltip_favicon_site_integrity_check">"Фильтрация содержимого включена. Если сайт отображается неправильно, попробуйте нажать на этот значок и отключить фильтрацию"</string>
  <string name="language">"Язык"</string>
  <string name="google_translate">"Google Переводчик"</string>
  <string name="translate_prefs_description">"Предлагать переводить страницы с помощью Google Переводчика"</string>
