@@ -177,7 +177,16 @@
  <string name="close_all_incognito_notification">"Закрыть все вкладки инкогнито"</string>
  <string name="tabs_and_apps_title">"Вкладки в списке приложений"</string>
  <string name="tabs_and_apps_opt_out_title">"Где искать вкладки"</string>
-@@ -537,10 +537,10 @@
+@@ -522,7 +522,7 @@
+ <string name="cast_notification_stopped">"Остановлено"</string>
+ <string name="cast_notification_finished">"Завершено"</string>
+ <string name="cast_notification_paused">"Приостановлен"</string>
+-<string name="swe_media_msg">"Please select how to handle media file"</string>
++<string name="swe_media_msg">"Пожалуйста, определите, что делать с медиафайлом"</string>
+ <string name="cast_notification_loading">"Загрузка видео…"</string>
+ <string name="cast_notification_playing">"Воспроизведение видео"</string>
+ <string name="cast_notification_loading_for_video">"Загрузка видео \"%1$s\"…"</string>
+@@ -538,10 +538,10 @@
  <string name="ntp_bookmarks">"Закладки"</string>
  <string name="ntp_custom_home">"Главная страница"</string>
  <string name="recent_tabs">"Недавние вкладки"</string>
@@ -192,7 +201,7 @@
  <string name="most_visited_placeholder_title">"Здесь появятся часто посещаемые страницы"</string>
  <string name="most_visited_placeholder_summary">"Здесь появятся страницы, которые вы чаще всего просматриваете."</string>
  <string name="accessibility_google_doodle">"Дудл Google: %1$s"</string>
-@@ -567,8 +567,8 @@
+@@ -568,8 +568,8 @@
  <string name="menu_new_tab">"Новая вкладка"</string>
  <string name="menu_new_incognito_tab">"Новая вкладка инкогнито"</string>
  <string name="menu_bookmarks">"Закладки"</string>
@@ -203,7 +212,7 @@
  <string name="menu_bookmarks_offline_pages">"Сохраненные страницы"</string>
  <string name="menu_recent_tabs">"Недавние вкладки"</string>
  <string name="menu_history">"История"</string>
-@@ -720,11 +720,11 @@
+@@ -721,11 +721,11 @@
  <string name="blocked_navigation_warning">"Навигация заблокирована: %1$s"</string>
  <string name="unreachable_navigation_warning">"Страница не найдена: %1$s"</string>
  <string name="close_tab">"Закрыть вкладку"</string>
@@ -220,7 +229,7 @@
  <string name="help_context_new_tab">"mobile_new_tab"</string>
  <string name="help_context_search_results">"mobile_search_results"</string>
  <string name="help_context_webpage">"mobile_webpage"</string>
-@@ -741,14 +741,14 @@
+@@ -742,14 +742,14 @@
  <string name="help_context_incognito_learn_more">"chrome_incognito"</string>
  <string name="help_context_usage_reports">"send_crash_report"</string>
  <string name="help_context_sad_tab">"mobile_awsnap"</string>

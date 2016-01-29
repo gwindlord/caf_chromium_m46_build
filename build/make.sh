@@ -12,9 +12,6 @@ cd $LOCAL_REPO/src
 # this commit is here because "gclient sync -n --no-nag-max" changes some files and they need to be either reset or committed to make repo clean
 git add -f $(git status -s | awk '{print $2}') && git commit -m "Dummy"
 
-# from here: http://forum.xda-developers.com/general/general/guide-building-chromium-snapdragon-t3255475
-git apply $LOCAL_REPO/build/patches/build-deps.patch && git add -f $(git status -s | awk '{print $2}') && git commit -m "Fixing CoreAurora guys issue"
-
 # reverting Google sign-in and extended bookmarks related removals
 # (well, they are not removed but placed under ENABLE_SUPPRESSED_CHROMIUM_FEATURES flag, but this flag is not added for actual usage)
 # some of them are part of other commits, so had to use patching
@@ -33,6 +30,9 @@ git add -f $(git status -s | awk '{print $2}') && git commit -m "Shamelessly ste
 # reverting to old bookmarks UI - have to change strategy due to 9fd8eb1f1374a51f048ec255f8e341ff2e381234
 git apply $LOCAL_REPO/build/patches/bookmarks.patch && git add -f $(git status -s | awk '{print $2}') && git commit -m "Reverting to old bookmarks UI"
 git revert 2f8a15af8865836a98c578138dc7f59e1b043cf7 || git add -f $(git status -s | awk '{print $2}') && git revert --continue
+
+# media files saving and exit dialog are disabled by default
+git apply $LOCAL_REPO/build/patches/qrd_features.patch && git add -f $(git status -s | awk '{print $2}') && git commit -m "Enable QRD features"
 
 if [[ "$isCustom" != "--no-gclient" ]];
 then

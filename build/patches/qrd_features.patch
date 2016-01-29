@@ -1,0 +1,15 @@
+diff --git a/chrome/android/java/res/values/values.xml b/chrome/android/java/res/values/values.xml
+index baf607c..2e55d29 100644
+--- a/chrome/android/java/res/values/values.xml
++++ b/chrome/android/java/res/values/values.xml
+@@ -69,8 +69,8 @@
+     <integer name="tooltip_site_integrity_check_wait">5</integer>
+ 
+     <!-- QRD features -->
+-    <bool name="swe_feature_exit_dialog">false</bool>
+-    <bool name="swe_feature_allow_media_downloads">false</bool>
++    <bool name="swe_feature_exit_dialog">true</bool>
++    <bool name="swe_feature_allow_media_downloads">true</bool>
+ 
+     <!-- Partner customization -->
+     <bool name="swe_force_enable_partner_customization">false</bool>
