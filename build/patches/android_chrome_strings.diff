@@ -139,7 +139,20 @@
  <string name="language">"Язык"</string>
  <string name="google_translate">"Google Переводчик"</string>
  <string name="translate_prefs_description">"Предлагать переводить страницы с помощью Google Переводчика"</string>
-@@ -391,8 +391,8 @@
+@@ -357,10 +357,10 @@
+ <string name="infobar_close">"Закрыть"</string>
+ <string name="infobar_screen_position">"Доступные параметры указаны в нижней части экрана"</string>
+ <string name="account_chooser_infobar_title">"Выберите аккаунт для входа с помощью Google Smart Lock"</string>
+-<string name="swe_download_infobar_text">"Do you want to download ^1 to ^2?"</string>
++<string name="swe_download_infobar_text">"Вы хотите скачать ^1 в ^2?"</string>
+ <string name="swe_downloadpath_activity_intent">""</string>
+ <string name="swe_downloadpath_activity_result_selection">""</string>
+-<string name="swe_downloadpath_not_enough_space">"Not enough space for download"</string>
++<string name="swe_downloadpath_not_enough_space">"Недостаточно места для скачивания"</string>
+ <string name="download_overwrite_infobar_text">"Вы хотите заменить существующий файл \"^1\" в папке \"^2\"?"</string>
+ <string name="download_overwrite_infobar_replace_file_button">"Заменить файл"</string>
+ <string name="download_overwrite_infobar_create_new_file_button">"Новый файл"</string>
+@@ -395,8 +395,8 @@
  <string name="infobar_missing_location_permission_text">"Предоставьте браузеру Chrome доступ к геоданным, чтобы продолжить работу на этом сайте."</string>
  <string name="infobar_missing_multiple_permissions_text">"Предоставьте браузеру Chrome разрешения, чтобы продолжить работу на этом сайте."</string>
  <string name="omnibox_geolocation_disclosure">"%1$s использует ваше местоположение, чтобы показывать результаты поиска по адресам."</string>
@@ -150,7 +163,7 @@
  <string name="contextmenu_open_in_new_tab">"Открыть в новой вкладке"</string>
  <string name="contextmenu_open_in_incognito_tab">"Открыть в режиме инкогнито"</string>
  <string name="contextmenu_copy_email_address">"Скопировать адрес эл. почты"</string>
-@@ -472,16 +472,16 @@
+@@ -476,16 +476,16 @@
  <string name="oma_download_size_label">"Размер:"</string>
  <string name="oma_download_type_label">"Тип:"</string>
  <string name="oma_download_description_label">"Описание:"</string>
@@ -177,7 +190,7 @@
  <string name="close_all_incognito_notification">"Закрыть все вкладки инкогнито"</string>
  <string name="tabs_and_apps_title">"Вкладки в списке приложений"</string>
  <string name="tabs_and_apps_opt_out_title">"Где искать вкладки"</string>
-@@ -522,7 +522,7 @@
+@@ -526,7 +526,7 @@
  <string name="cast_notification_stopped">"Остановлено"</string>
  <string name="cast_notification_finished">"Завершено"</string>
  <string name="cast_notification_paused">"Приостановлен"</string>
@@ -186,7 +199,7 @@
  <string name="cast_notification_loading">"Загрузка видео…"</string>
  <string name="cast_notification_playing">"Воспроизведение видео"</string>
  <string name="cast_notification_loading_for_video">"Загрузка видео \"%1$s\"…"</string>
-@@ -538,10 +538,10 @@
+@@ -542,10 +542,10 @@
  <string name="ntp_bookmarks">"Закладки"</string>
  <string name="ntp_custom_home">"Главная страница"</string>
  <string name="recent_tabs">"Недавние вкладки"</string>
@@ -201,7 +214,7 @@
  <string name="most_visited_placeholder_title">"Здесь появятся часто посещаемые страницы"</string>
  <string name="most_visited_placeholder_summary">"Здесь появятся страницы, которые вы чаще всего просматриваете."</string>
  <string name="accessibility_google_doodle">"Дудл Google: %1$s"</string>
-@@ -568,8 +568,8 @@
+@@ -572,8 +572,8 @@
  <string name="menu_new_tab">"Новая вкладка"</string>
  <string name="menu_new_incognito_tab">"Новая вкладка инкогнито"</string>
  <string name="menu_bookmarks">"Закладки"</string>
@@ -212,7 +225,7 @@
  <string name="menu_bookmarks_offline_pages">"Сохраненные страницы"</string>
  <string name="menu_recent_tabs">"Недавние вкладки"</string>
  <string name="menu_history">"История"</string>
-@@ -721,11 +721,11 @@
+@@ -725,13 +725,13 @@
  <string name="blocked_navigation_warning">"Навигация заблокирована: %1$s"</string>
  <string name="unreachable_navigation_warning">"Страница не найдена: %1$s"</string>
  <string name="close_tab">"Закрыть вкладку"</string>
@@ -221,21 +234,27 @@
 -<string name="swe_exit_dialog_msg">"Do you want to exit the browser?"</string>
 -<string name="swe_minimize">"Minimize"</string>
 -<string name="swe_quit">"Quit"</string>
+-<string name="swe_action_not_found">"Action Not Found"</string>
+-<string name="swe_wifi_select_message">"Wifi Detected!\n Please Select Wifi Access Point for the Browser"</string>
 +<string name="swe_exit">"Выход"</string>
 +<string name="swe_exit_dialog_title">"Закрыть браузер"</string>
 +<string name="swe_exit_dialog_msg">"Вы действительно хотите выйти?"</string>
 +<string name="swe_minimize">"Свернуть"</string>
 +<string name="swe_quit">"Выйти"</string>
++<string name="swe_action_not_found">"Действие не обнаружено!"</string>
++<string name="swe_wifi_select_message">"Обнаружен Wifi!\n Пожалуйста, выберите точку доступа Wifi для браузера"</string>
  <string name="help_context_new_tab">"mobile_new_tab"</string>
  <string name="help_context_search_results">"mobile_search_results"</string>
  <string name="help_context_webpage">"mobile_webpage"</string>
-@@ -742,14 +742,14 @@
+@@ -748,16 +748,14 @@
  <string name="help_context_incognito_learn_more">"chrome_incognito"</string>
  <string name="help_context_usage_reports">"send_crash_report"</string>
  <string name="help_context_sad_tab">"mobile_awsnap"</string>
 -<string name="swe_update">"SWE browser update available"</string>
 -<string name="swe_update_msg">"\"Version: \""</string>
 -<string name="swe_feedback_subject">"Browser Feedback"</string>
+-<string name="swe_def_action_wifi_selection_data_connections">""</string>
+-<string name="swe_def_intent_pick_network">""</string>
 -<string name="swe_feedback_msg">"Version : %1$s
 -        &lt;br&gt;&lt;/br&gt;Build Hash: %2$s
 -        &lt;br&gt;&lt;/br&gt;Tab Title: %3$s
