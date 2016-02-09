@@ -1,5 +1,5 @@
 diff --git a/chrome/android/java/res/values/values.xml b/chrome/android/java/res/values/values.xml
-index baf607c..2e55d29 100644
+index 9628476..a73d0cb 100644
 --- a/chrome/android/java/res/values/values.xml
 +++ b/chrome/android/java/res/values/values.xml
 @@ -69,8 +69,8 @@
@@ -10,6 +10,6 @@ index baf607c..2e55d29 100644
 -    <bool name="swe_feature_allow_media_downloads">false</bool>
 +    <bool name="swe_feature_exit_dialog">true</bool>
 +    <bool name="swe_feature_allow_media_downloads">true</bool>
+     <!-- Prompt user to select WiFi access point or otherwise enable WLAN -->
+     <bool name="swe_feature_network_notifier">false</bool>
  
-     <!-- Partner customization -->
-     <bool name="swe_force_enable_partner_customization">false</bool>
