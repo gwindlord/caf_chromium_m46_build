@@ -12,9 +12,8 @@ cd $LOCAL_REPO/src
 # this is because they placed WebRefiner and WebDefender translation into zip archive >_<
 pushd $LOCAL_REPO/src/components/web_refiner/java/
   cp -rf $LOCAL_REPO/build/webrefiner/values-ru .
-  cp -rf $LOCAL_REPO/build/webrefiner/raw .
-  zip -0TX libswewebrefiner_java.zip values-ru/strings.xml raw/web_defender_configuration.txt
-  rm -rf values-ru/ raw/
+  zip -0TX libswewebrefiner_java.zip values-ru/strings.xml
+  rm -rf values-ru/
   git add -f $(git status -s | awk '{print $2}') && git commit -m "Adding WebRefiner and WebDefender translation"
 popd
 
@@ -36,7 +35,6 @@ git apply $LOCAL_REPO/build/patches/themes.patch && git add -f $(git status -s |
 git apply $LOCAL_REPO/build/patches/remove_translate.patch && git add -f $(git status -s | awk '{print $2}') && git commit -m "Remove page translation tick"
 
 cp -f $LOCAL_REPO/build/webrefiner/web_refiner_conf $LOCAL_REPO/src/chrome/android/java/res_chromium/raw/
-#cp -f $LOCAL_REPO/build/webdefender_conf/web_defender_conf $LOCAL_REPO/src/chrome/android/java/res_chromium/raw/
 git add -f $(git status -s | awk '{print $2}') && git commit -m "Shamelessly stealing WebRefiner config from JSwarts and extending it"
 
 # reverting to old bookmarks UI - have to change strategy due to 9fd8eb1f1374a51f048ec255f8e341ff2e381234
