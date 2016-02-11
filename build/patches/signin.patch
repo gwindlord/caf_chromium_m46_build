@@ -16,10 +16,10 @@ index 09f6c13..6734aef 100644
          android:layout="@layout/browser_preference_category_first"
          android:title="@string/prefs_section_basics"/>
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/ChromeActivity.java b/chrome/android/java/src/org/chromium/chrome/browser/ChromeActivity.java
-index c382713..ea88fb8 100644
+index 15501b2..977c4f5 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/ChromeActivity.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/ChromeActivity.java
-@@ -714,7 +714,6 @@ public abstract class ChromeActivity extends BrowserChromeActivity
+@@ -718,7 +718,6 @@ public abstract class ChromeActivity extends BrowserChromeActivity
  
          // We want to refresh partner browser provider every onStart().
          mPartnerBrowserRefreshNeeded = true;
@@ -28,7 +28,7 @@ index c382713..ea88fb8 100644
      }
  
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/ChromeApplication.java b/chrome/android/java/src/org/chromium/chrome/browser/ChromeApplication.java
-index cc7e8c7..7bf7a97 100644
+index 2322e3b..2180b17 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/ChromeApplication.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/ChromeApplication.java
 @@ -25,7 +25,6 @@ import org.chromium.base.ApplicationState;
@@ -39,7 +39,7 @@ index cc7e8c7..7bf7a97 100644
  import org.chromium.base.PathUtils;
  import org.chromium.base.ResourceExtractor;
  import org.chromium.base.ThreadUtils;
-@@ -501,20 +500,6 @@ public class ChromeApplication extends ContentApplication {
+@@ -501,17 +500,6 @@ public class ChromeApplication extends ContentApplication {
      public void initCommandLine() {
          // TODO(newt): delete this when deleting ChromeShell.
          ChromeCommandLineInitUtil.initChromeCommandLine(this);
@@ -48,9 +48,6 @@ index cc7e8c7..7bf7a97 100644
 -        }
 -        if (!CommandLine.getInstance().hasSwitch(
 -                ChromeSwitches.ENABLE_SUPPRESSED_CHROMIUM_FEATURES)) {
--            if (!CommandLine.getInstance().hasSwitch(ChromeSwitches.DISABLE_FIRST_RUN_EXPERIENCE)) {
--                CommandLine.getInstance().appendSwitch(ChromeSwitches.DISABLE_FIRST_RUN_EXPERIENCE);
--            }
 -            if (!"0".equals(CommandLine.getInstance()
 -                    .getSwitchValue(ChromeSwitches.ENABLE_ENHANCED_BOOKMARKS))) {
 -                CommandLine.getInstance().
@@ -128,6 +125,61 @@ index 0674ce5..ef4057b 100644
  
          mIsInMultiInstanceMode = MultiWindowUtils.getInstance().shouldRunInMultiInstanceMode(this);
          mIntentHandler = new IntentHandler(this, getPackageName());
+diff --git a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunFlowSequencer.java b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunFlowSequencer.java
+index e6e4361..699e721 100644
+--- a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunFlowSequencer.java
++++ b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/FirstRunFlowSequencer.java
+@@ -82,10 +82,6 @@ public abstract class FirstRunFlowSequencer  {
+      */
+     @VisibleForTesting
+     boolean isSyncAllowed() {
+-        if (!CommandLine.getInstance().hasSwitch(
+-                ChromeSwitches.ENABLE_SUPPRESSED_CHROMIUM_FEATURES)) {
+-            return false;
+-        }
+         return FeatureUtilities.canAllowSync(mActivity)
+                 && !SigninManager.get(mActivity.getApplicationContext()).isSigninDisabledByPolicy();
+     }
+diff --git a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/ToSAndUMAFirstRunFragment.java b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/ToSAndUMAFirstRunFragment.java
+index 7df7054..0f8e3bb 100644
+--- a/chrome/android/java/src/org/chromium/chrome/browser/firstrun/ToSAndUMAFirstRunFragment.java
++++ b/chrome/android/java/src/org/chromium/chrome/browser/firstrun/ToSAndUMAFirstRunFragment.java
+@@ -17,9 +17,7 @@ import android.widget.CheckBox;
+ import android.widget.TextView;
+ 
+ import org.chromium.base.ApiCompatibilityUtils;
+-import org.chromium.base.CommandLine;
+ import org.chromium.chrome.R;
+-import org.chromium.chrome.browser.ChromeSwitches;
+ import org.chromium.chrome.browser.preferences.PrefServiceBridge;
+ import org.chromium.ui.text.SpanApplier;
+ import org.chromium.ui.text.SpanApplier.SpanInfo;
+@@ -55,18 +53,14 @@ public class ToSAndUMAFirstRunFragment extends FirstRunPage {
+             }
+         });
+ 
+-        if (CommandLine.getInstance().hasSwitch(ChromeSwitches.CRASH_LOG_SERVER_CMD)) {
+-            int paddingStart = getResources().getDimensionPixelSize(R.dimen.fre_tos_checkbox_padding);
+-            ApiCompatibilityUtils.setPaddingRelative(mSendReportCheckBox,
+-                    ApiCompatibilityUtils.getPaddingStart(mSendReportCheckBox) + paddingStart,
+-                    mSendReportCheckBox.getPaddingTop(),
+-                    ApiCompatibilityUtils.getPaddingEnd(mSendReportCheckBox),
+-                    mSendReportCheckBox.getPaddingBottom());
++        int paddingStart = getResources().getDimensionPixelSize(R.dimen.fre_tos_checkbox_padding);
++        ApiCompatibilityUtils.setPaddingRelative(mSendReportCheckBox,
++                ApiCompatibilityUtils.getPaddingStart(mSendReportCheckBox) + paddingStart,
++                mSendReportCheckBox.getPaddingTop(),
++                ApiCompatibilityUtils.getPaddingEnd(mSendReportCheckBox),
++                mSendReportCheckBox.getPaddingBottom());
+ 
+-            mSendReportCheckBox.setChecked(!getPageDelegate().isNeverUploadCrashDump());
+-        } else {
+-            mSendReportCheckBox.setVisibility(View.GONE);
+-        }
++        mSendReportCheckBox.setChecked(!getPageDelegate().isNeverUploadCrashDump());
+         mTosAndPrivacy.setMovementMethod(LinkMovementMethod.getInstance());
+ 
+         ClickableSpan clickableTermsSpan = new ClickableSpan() {
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/ntp/RecentTabsRowAdapter.java b/chrome/android/java/src/org/chromium/chrome/browser/ntp/RecentTabsRowAdapter.java
 index 737048a..d33d469 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/ntp/RecentTabsRowAdapter.java
@@ -211,7 +263,7 @@ index c2fe316..4221e18 100644
      }
  
 diff --git a/chrome/android/java/src/org/chromium/chrome/browser/preferences/privacy/PrivacyPreferences.java b/chrome/android/java/src/org/chromium/chrome/browser/preferences/privacy/PrivacyPreferences.java
-index 3fbed83..7d36731 100644
+index 1b090f0..406bac4 100644
 --- a/chrome/android/java/src/org/chromium/chrome/browser/preferences/privacy/PrivacyPreferences.java
 +++ b/chrome/android/java/src/org/chromium/chrome/browser/preferences/privacy/PrivacyPreferences.java
 @@ -16,9 +16,7 @@ import android.view.MenuItem;
@@ -224,13 +276,11 @@ index 3fbed83..7d36731 100644
  import org.chromium.chrome.browser.contextualsearch.ContextualSearchFieldTrial;
  import org.chromium.chrome.browser.help.HelpAndFeedback;
  import org.chromium.chrome.browser.precache.PrecacheLauncher;
-@@ -107,13 +105,7 @@ public class PrivacyPreferences extends BrowserPreferenceFragment
-         ChromeBaseCheckBoxPreference uploadCrashDumpNoCellularPref =
+@@ -108,11 +106,7 @@ public class PrivacyPreferences extends BrowserPreferenceFragment
                  (ChromeBaseCheckBoxPreference) findPreference(PREF_CRASH_DUMP_UPLOAD_NO_CELLULAR);
  
--        //Disable Chromium crash log dump setting
--        if(!CommandLine.getInstance()
--                .hasSwitch(ChromeSwitches.ENABLE_SUPPRESSED_CHROMIUM_FEATURES)) {
+         //Disable Chromium crash log dump setting
+-        if(!CommandLine.getInstance().hasSwitch(ChromeSwitches.CRASH_LOG_SERVER_CMD)) {
 -            preferenceScreen.removePreference(uploadCrashDumpNoCellularPref);
 -            preferenceScreen.removePreference(uploadCrashDumpPref);
 -            preferenceScreen.removePreference(findPreference(PREF_USAGE_AND_CRASH_REPORTING));
@@ -239,7 +289,7 @@ index 3fbed83..7d36731 100644
              preferenceScreen.removePreference(uploadCrashDumpNoCellularPref);
              preferenceScreen.removePreference(uploadCrashDumpPref);
          } else {
-@@ -347,12 +339,9 @@ public class PrivacyPreferences extends BrowserPreferenceFragment
+@@ -346,12 +340,9 @@ public class PrivacyPreferences extends BrowserPreferenceFragment
      @Override
      public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
          menu.clear();

@@ -44,7 +44,9 @@ git revert 2f8a15af8865836a98c578138dc7f59e1b043cf7 || git add -f $(git status -
 # media files saving and exit dialog are disabled by default
 git apply $LOCAL_REPO/build/patches/qrd_features.patch && git add -f $(git status -s | awk '{print $2}') && git commit -m "Enable QRD features"
 
-git apply $LOCAL_REPO/build/patches/swe_strings.patch && git add -f $(git status -s | awk '{print $2}') && git commit -m "Adding SWE translations"
+git apply $LOCAL_REPO/build/patches/swe_strings.patch
+cp $LOCAL_REPO/build/patches/swe_overlay.xml $LOCAL_REPO/src/chrome/android/java/res_swe/values-ru/
+git add -f $(git status -s | awk '{print $2}') && git commit -m "Adding SWE translations"
 
 if [[ "$isCustom" != "--no-gclient" ]];
 then
