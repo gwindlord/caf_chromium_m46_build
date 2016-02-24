@@ -4,6 +4,9 @@ LOCAL_REPO="$(dirname $(dirname $(readlink -f $0)))"
 ROMName=$(basename $LOCAL_REPO)
 LogsDir="$HOME/logs"
 
+# errors on
+set -e
+
 if [ ! -d "$LogsDir" ]; then
   echo -e "\n"$(date +%D\ %T) "Logs directory '$LogsDir' not found, creating it..."
   mkdir -p "$LogsDir"
