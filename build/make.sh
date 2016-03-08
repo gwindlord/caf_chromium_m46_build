@@ -24,7 +24,9 @@ popd
 git add -f $(git status -s | awk '{print $2}') && git commit -m "Dummy"
 
 # revert "Disable edge navigation in low-power mode" - I want it! :)
-git revert 5b20b729a33916a315e03f2be7be8edcca7bd27e
+set +e
+git revert 5b20b729a33916a315e03f2be7be8edcca7bd27e || git add -f $(git status -s | awk '{print $2}') && git revert --continue
+set -e
 
 # reverting Google sign-in and extended bookmarks related removals
 # (well, they are not removed but placed under ENABLE_SUPPRESSED_CHROMIUM_FEATURES flag, but this flag is not added for actual usage)
