@@ -24,14 +24,8 @@ popd
 git add -f $(git status -s | awk '{print $2}') && git commit -m "Dummy"
 
 # revert "Disable edge navigation in low-power mode" - I want it! :)
-# yes, now have to add more code to really revert that after a1745d758ff5bfc4c5b05c47a4e64e2cde1c7d5b >_<
-set +e
-git revert 5b20b729a33916a315e03f2be7be8edcca7bd27e
-set -e
-perl -p -i -e 's/\<+.+$//' chrome/android/java/src/org/chromium/chrome/browser/compositor/layouts/EdgeNavigationLayout.java
-sed -i 's#=======##' chrome/android/java/src/org/chromium/chrome/browser/compositor/layouts/EdgeNavigationLayout.java
-perl -p -i -e 's/(\>)+.+$//' chrome/android/java/src/org/chromium/chrome/browser/compositor/layouts/EdgeNavigationLayout.java
-git add -f $(git status -s | awk '{print $2}') && git revert --continue
+# after a1745d758ff5bfc4c5b05c47a4e64e2cde1c7d5b have to do it via patch
+git apply $LOCAL_REPO/build/patches/enable_low_power_edge_nav.patch && git add -f $(git status -s | awk '{print $2}') && git commit -m "Revert Disable edge navigation in low-power mode"
 
 # reverting Google sign-in and extended bookmarks related removals
 # (well, they are not removed but placed under ENABLE_SUPPRESSED_CHROMIUM_FEATURES flag, but this flag is not added for actual usage)
