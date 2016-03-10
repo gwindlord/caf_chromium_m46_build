@@ -54,14 +54,14 @@ git apply $LOCAL_REPO/build/patches/swe_strings.patch
 cp $LOCAL_REPO/build/patches/swe_overlay.xml $LOCAL_REPO/src/chrome/android/java/res_swe/values-ru/
 git add -f $(git status -s | awk '{print $2}') && git commit -m "Adding SWE translations"
 
+patch -p0 < $LOCAL_REPO/build/patches/inox/chromium-sandbox-pie.diff
+git add -f $(git status -s | awk '{print $2}') && git commit -m "Hardening the sandbox with Position Independent Code(PIE) against ROP exploits"
+
 if [[ "$isCustom" != "--no-gclient" ]];
 then
-
   gclient runhooks -v
-
   # implementing custom translated lines build
   patch -p0 < $LOCAL_REPO/build/patches/chrome_strings_grd_ninja.diff
-
 else
   exit 0
 fi
@@ -69,7 +69,5 @@ fi
 # for ROM build env - to allow it starting system package build itself
 if [[ "$isCustom" != "--system" ]];
 then
-
   $LOCAL_REPO/build/run.sh &
-
 fi
