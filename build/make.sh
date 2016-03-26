@@ -61,7 +61,8 @@ if [[ "$isCustom" != "--no-gclient" ]];
 then
   gclient runhooks -v
   # implementing custom translated lines build
-  patch -p0 < $LOCAL_REPO/build/patches/chrome_strings_grd_ninja.diff
+  # now all translatons are stock - but keeping this as a nice w/a
+  #patch -p0 < $LOCAL_REPO/build/patches/chrome_strings_grd_ninja.diff
 else
   exit 0
 fi
