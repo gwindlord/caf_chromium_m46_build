@@ -57,6 +57,9 @@ git add -f $(git status -s | awk '{print $2}') && git commit -m "Adding SWE tran
 patch -p0 < $LOCAL_REPO/build/patches/inox/chromium-sandbox-pie.diff
 git add -f $(git status -s | awk '{print $2}') && git commit -m "Hardening the sandbox with Position Independent Code(PIE) against ROP exploits"
 
+cp -f $LOCAL_REPO/build/patches/search_engines_preload $LOCAL_REPO/src/chrome/android/java/res_chromium/raw/search_engines_preload
+git add -f $(git status -s | awk '{print $2}') && git commit -m "Adding DuckDuckGo and Bing search engines"
+
 if [[ "$isCustom" != "--no-gclient" ]];
 then
   gclient runhooks -v
