@@ -38,13 +38,6 @@
       "expiration"      : "5 days"
     },
     {
-      "name"            : "Scam Filter",
-      "category"        : "MALWARE_DOMAINS",
-      "format"          : "WebRefiner 1.0",
-      "url"             : "https://spam404bl.com/spam404scamlist.txt",
-      "expiration"      : "5 days"
-    },
-    {
       "name"            : "Adware Filter",
       "category"        : "ADS",
       "format"          : "WebRefiner 1.0",
