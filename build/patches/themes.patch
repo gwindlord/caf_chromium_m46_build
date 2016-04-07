@@ -1,18 +1,5 @@
-diff --git a/swe/channels/system/branding/BRANDING b/swe/channels/system/branding/BRANDING
-index ca5e6a1..fe37520 100644
---- a/swe/channels/system/branding/BRANDING
-+++ b/swe/channels/system/branding/BRANDING
-@@ -5,7 +5,7 @@ PRODUCT_SHORTNAME=Snapdragon
- PRODUCT_INSTALLER_FULLNAME=Snapdragon Installer
- PRODUCT_INSTALLER_SHORTNAME=Snapdragon Installer
- COPYRIGHT=Copyright (c) 2015 The Linux Foundation. All rights reserved.
--PACKAGE_NAME=org.codeaurora.swe.browser
-+PACKAGE_NAME=com.chrome.beta
- APK_LABEL=@string/application_name
- APK_AUTHORITIES=browser
- APP_AUTHORITIES=local.browser
 diff --git a/swe/channels/default/branding/BRANDING b/swe/channels/default/branding/BRANDING
-index a8d0ac4..6397e51 100644
+index a8d0ac4..e59b36d 100644
 --- a/swe/channels/default/branding/BRANDING
 +++ b/swe/channels/default/branding/BRANDING
 @@ -5,4 +5,4 @@ PRODUCT_SHORTNAME=Browser
@@ -21,4 +8,16 @@ index a8d0ac4..6397e51 100644
  COPYRIGHT=Copyright (c) 2015 The Linux Foundation. All rights reserved.
 -PACKAGE_NAME=org.codeaurora.swe.browser.dev
 +PACKAGE_NAME=com.chrome.beta
-
+diff --git a/swe/channels/system/branding/BRANDING b/swe/channels/system/branding/BRANDING
+index 4fb9a40..7dc5755 100644
+--- a/swe/channels/system/branding/BRANDING
++++ b/swe/channels/system/branding/BRANDING
+@@ -5,7 +5,7 @@ PRODUCT_SHORTNAME=Snapdragon
+ PRODUCT_INSTALLER_FULLNAME=Snapdragon Installer
+ PRODUCT_INSTALLER_SHORTNAME=Snapdragon Installer
+ COPYRIGHT=Copyright (c) 2015-2016 The Linux Foundation. All rights reserved.
+-PACKAGE_NAME=com.android.browser
++PACKAGE_NAME=com.chrome.beta
+ APK_LABEL=@string/application_name
+ APK_AUTHORITIES=browser
+ APP_AUTHORITIES=local.browser
