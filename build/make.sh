@@ -48,7 +48,7 @@ git revert 2f8a15af8865836a98c578138dc7f59e1b043cf7 || git add -f $(git status -
 set -e
 
 # media files saving and exit dialog are disabled by default
-git apply $LOCAL_REPO/build/patches/qrd_features.patch && git add -f $(git status -s | awk '{print $2}') && git commit -m "Enable QRD features"
+git apply $LOCAL_REPO/build/patches/swe_features/qrd_features.patch && git add -f $(git status -s | awk '{print $2}') && git commit -m "Enable QRD features"
 
 git apply $LOCAL_REPO/build/patches/swe_strings.patch
 cp $LOCAL_REPO/build/patches/swe_overlay.xml $LOCAL_REPO/src/chrome/android/java/res_swe/values-ru/
@@ -57,8 +57,18 @@ git add -f $(git status -s | awk '{print $2}') && git commit -m "Adding SWE tran
 patch -p0 < $LOCAL_REPO/build/patches/inox/chromium-sandbox-pie.diff
 git add -f $(git status -s | awk '{print $2}') && git commit -m "Hardening the sandbox with Position Independent Code(PIE) against ROP exploits"
 
-cp -f $LOCAL_REPO/build/patches/search_engines_preload $LOCAL_REPO/src/chrome/android/java/res_chromium/raw/search_engines_preload
+#cp -f $LOCAL_REPO/build/patches/search_engines_preload $LOCAL_REPO/src/chrome/android/java/res_chromium/raw/search_engines_preload
+mkdir -p $LOCAL_REPO/src/swe/channels/default/raw/ $LOCAL_REPO/src/swe/channels/system/raw/
+cp -f $LOCAL_REPO/build/patches/swe_features/search_engines_preload $LOCAL_REPO/src/swe/channels/default/raw/
+cp -f $LOCAL_REPO/build/patches/swe_features/search_engines_preload $LOCAL_REPO/src/swe/channels/system/raw/
 git add -f $(git status -s | awk '{print $2}') && git commit -m "Adding DuckDuckGo and Bing search engines"
+
+mkdir -p $LOCAL_REPO/src/swe/channels/default/values/ $LOCAL_REPO/src/swe/channels/system/values/
+cp -f $LOCAL_REPO/build/patches/swe_features/overlay.xml $LOCAL_REPO/src/swe/channels/default/values/
+cp -f $LOCAL_REPO/build/patches/swe_features/overlay.xml $LOCAL_REPO/src/swe/channels/system/values/
+cp -f $LOCAL_REPO/build/patches/swe_features/strings.xml $LOCAL_REPO/src/swe/channels/default/values/
+cp -f $LOCAL_REPO/build/patches/swe_features/strings.xml $LOCAL_REPO/src/swe/channels/system/values/
+git add -f $(git status -s | awk '{print $2}') && git commit -m "Enabling Media Download for sure and disabling DRM upload restriction"
 
 if [[ "$isCustom" != "--no-gclient" ]];
 then

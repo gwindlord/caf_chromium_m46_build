@@ -13,5 +13,6 @@
         "searchUrl": "https://www.bing.com/search?q={searchTerms}",
         "faviconUrl": "https://www.bing.com/favicon.ico"
         }
-    ]
+    ],
+    "default": 0
 }
