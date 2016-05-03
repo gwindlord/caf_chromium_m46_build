@@ -43,9 +43,7 @@ git add -f $(git status -s | awk '{print $2}') && git commit -m "Shamelessly ste
 
 # reverting to old bookmarks UI - have to change strategy due to 9fd8eb1f1374a51f048ec255f8e341ff2e381234
 git apply $LOCAL_REPO/build/patches/bookmarks.patch && git add -f $(git status -s | awk '{print $2}') && git commit -m "Reverting to old bookmarks UI"
-set +e
 git revert 2f8a15af8865836a98c578138dc7f59e1b043cf7 || git add -f $(git status -s | awk '{print $2}') && git revert --continue
-set -e
 
 # media files saving and exit dialog are disabled by default
 git apply $LOCAL_REPO/build/patches/swe_features/qrd_features.patch && git add -f $(git status -s | awk '{print $2}') && git commit -m "Enable QRD features"
