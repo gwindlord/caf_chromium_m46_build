@@ -68,6 +68,9 @@ cp -f $LOCAL_REPO/build/patches/swe_features/strings.xml $LOCAL_REPO/src/swe/cha
 cp -f $LOCAL_REPO/build/patches/swe_features/strings.xml $LOCAL_REPO/src/swe/channels/system/values/
 git add -f $(git status -s | awk '{print $2}') && git commit -m "Enabling Media Download for sure and disabling DRM upload restriction"
 
+# reverting this new system package structure
+git revert --no-edit 039fc3ed4d445a7d4fc1ba1d0240329a02dde1ab
+
 if [[ "$isCustom" != "--no-gclient" ]];
 then
   gclient runhooks -v
